@@ -134,9 +134,18 @@
           </form>
           <br /><br />
       </div>
-      <div [ngStyle]="chartStyle"></div>
-      <button type="button" (click)="validateForm()" class="btn btn-primary">Next</button>
-      <button type="button" (click)="goBack()" class="btn btn-secondary">Back</button>
+      <div [ngStyle]="chartStyle">
+        <canvas #budgetChart></canvas>
+        <button type="button" *ngIf="netAmount > 0; else elseBlock" class="btn btn-primary" [routerLink]="['/emergency-fund']" >Next</button>
+        <ng-template #elseBlock>
+          <button type="button" (click)="updateBudgetData()" class="btn btn-primary">Go back</button>
+        </ng-template>
+      </div>
+      <div [ngStyle]="budgetFormStyle">
+          <button type="button" (click)="validateForm()" class="btn btn-primary">Next</button>
+          <button type="button" (click)="goBack()" class="btn btn-secondary">Back</button>
+      </div>
+      
     </div>
   </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-savings',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SavingsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private locationService: Location) { }
 
   ngOnInit() {
+  }
+
+  /**
+   * Routes user to previous page
+   */
+  public goBack(): void {
+    this.locationService.back();
   }
 
 }

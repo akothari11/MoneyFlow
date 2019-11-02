@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'info', component: InfoComponent },
   { path: 'budget', component:  BudgetComponent},
   { path: 'emergency-fund', component: EmergencyFundComponent },
-  { path: 'employer-funds', component: EmployerFundComponent},
+  { path: 'employer-fund', component: EmployerFundComponent},
   { path: 'debt', component: DebtComponent},
   { path: 'savings', component: SavingsComponent},
   { path: '**', redirectTo: '/info', pathMatch: 'full' },

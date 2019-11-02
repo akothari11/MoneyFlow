@@ -13,8 +13,8 @@
         <li class="list-group-item">Goals?</li>
       </ul>
       <div class="card-body">
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
+        <button type="button" [routerLink]="['/emergency-fund']" class="btn btn-primary">Establish Emergency Fund</button>
+        <button type="button" (click) ="goBack()" class="btn btn-secondary">Back</button>
       </div>
     </div>
   </div>

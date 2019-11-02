@@ -1,10 +1,115 @@
 <div class="container">
-    <div class="card" style="margin-top: 40px;">
-      <div class="card-body">
-        <h5 class="card-title">Budget</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <button type="button" [routerLink]="['/emergency-fund']" class="btn btn-primary">Establish Emergency Fund</button>
-        <button type="button" (click) ="goBack()" class="btn btn-secondary">Back</button>
-      </div>
+  <div class="card" style="margin-top: 40px;">
+    <div class="card-body">
+      <h5 class="card-title">Budget</h5>
+      <p class="card-text">Let's go over a couple questions to assess some basic income and expenses you may have: </p>
+      <form>
+        <h6>Monthly Income</h6>
+        <div class="row">
+          <div class="col-6">
+            <label for="salaryInput">Monthly Salary</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+              </div>
+              <input type="number" class="form-control" placeholder="Amount (to the nearest dollar)" [(ngModel)]="salary">
+              <div class="input-group-append">
+                <span class="input-group-text">.00</span>
+              </div>
+              
+            </div>
+            <div *ngIf="invalidSalary">
+              <small class="invalidText">Please enter a valid salary</small>
+          </div>
+          </div>
+        </div>
+       
+        <br /><br />
+        <h6>Essential Expenses</h6>
+        <div class="row">
+          <div class="col">
+            <label for="salaryInput">Housing Expenses (Monthly Rent/Mortgage Payments)</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+              </div>
+              <input type="number" class="form-control" placeholder="Amount (to the nearest dollar)" [(ngModel)]="housingExpense">
+              <div class="input-group-append">
+                <span class="input-group-text">.00</span>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <label for="salaryInput">Food/Groceries</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+              </div>
+              <input type="number" class="form-control" placeholder="Amount (to the nearest dollar)" [(ngModel)]="foodExpense">
+              <div class="input-group-append">
+                <span class="input-group-text">.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col">
+              <label for="salaryInput">Essential Bills (Power, Water, Heat, Toiletries...)</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">$</span>
+                </div>
+                <input type="number" class="form-control" placeholder="Amount (to the nearest dollar)" [(ngModel)]="essentialBills">
+                <div class="input-group-append">
+                  <span class="input-group-text">.00</span>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <label for="salaryInput">Transportation Costs (Gas, Bus Fare, Car Insurance...)</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">$</span>
+                </div>
+                <input type="number" class="form-control" placeholder="Amount (to the nearest dollar)" [(ngModel)]="incomeExpenses">
+                <div class="input-group-append">
+                  <span class="input-group-text">.00</span>
+                </div>
+              </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col">
+              <label for="salaryInput">Health Care</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">$</span>
+                </div>
+                <input type="number" class="form-control" placeholder="Amount (to the nearest dollar)" [(ngModel)]="healthCare">
+                <div class="input-group-append">
+                  <span class="input-group-text">.00</span>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <label for="salaryInput">Minimum Debt Payments</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">$</span>
+                </div>
+                <input type="number" class="form-control" placeholder="Amount (to the nearest dollar)" [(ngModel)]="minDebtPayments">
+                <div class="input-group-append">
+                  <span class="input-group-text">.00</span>
+                </div>
+              </div>
+            </div>
+        </div>
+      </form>
+      <br /><br />
+      <button type="button" (click)="validateForm()" class="btn btn-primary">Next</button>
+      <button type="button" (click)="goBack()" class="btn btn-secondary">Back</button>
     </div>
   </div>
+</div>

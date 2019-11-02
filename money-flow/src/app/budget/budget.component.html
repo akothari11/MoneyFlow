@@ -17,14 +17,14 @@
                   <div class="input-group-append">
                     <span class="input-group-text">.00</span>
                   </div>
-    
+
                 </div>
                 <div *ngIf="invalidSalary">
                   <small class="invalidText">Please enter a valid number</small>
               </div>
               </div>
             </div>
-    
+
             <br /><br />
             <h6>Essential Expenses</h6>
             <div class="row">
@@ -39,7 +39,7 @@
                     <span class="input-group-text">.00</span>
                   </div>
                 </div>
-    
+
                 <div *ngIf="invalidHousingExpense">
                   <small class="invalidText">Please enter a valid number</small>
               </div>
@@ -55,7 +55,7 @@
                     <span class="input-group-text">.00</span>
                   </div>
                 </div>
-    
+
                 <div *ngIf="invalidFoodExpense">
                   <small class="invalidText">Please enter a valid number</small>
               </div>
@@ -74,7 +74,7 @@
                       <span class="input-group-text">.00</span>
                     </div>
                   </div>
-    
+
                   <div *ngIf="invalidEssentialBills">
                     <small class="invalidText">Please enter a valid number</small>
                 </div>
@@ -90,7 +90,7 @@
                       <span class="input-group-text">.00</span>
                     </div>
                   </div>
-    
+
                   <div *ngIf="invalidIncomeExpense">
                     <small class="invalidText">Please enter a valid number</small>
                   </div>
@@ -109,7 +109,7 @@
                       <span class="input-group-text">.00</span>
                     </div>
                   </div>
-    
+
                   <div *ngIf="invalidHealthCare">
                     <small class="invalidText">Please enter a valid number</small>
                   </div>
@@ -125,7 +125,7 @@
                       <span class="input-group-text">.00</span>
                     </div>
                   </div>
-    
+
                   <div *ngIf="invalidDebtPayment">
                     <small class="invalidText">Please enter a valid number</small>
                   </div>
@@ -137,17 +137,17 @@
       <div [ngStyle]="chartStyle">
         <canvas #budgetChart></canvas>
         <p *ngIf="netAmount < 0; " style="text-align: center;">It looks like your net income for this period is negative. We recommend you trying to lower your monthly costs as much as possible.</p>
-        <button type="button" *ngIf="netAmount > 0; else elseBlock" class="btn btn-primary" [routerLink]="['/emergency-fund']" >Next</button>
+        <button type="button" *ngIf="netAmount > 0; else elseBlock" class="btn btn-primary" [routerLink]="['/emergency-fund', {amount: netAmount}]" >Next</button>
         <ng-template #elseBlock>
           <button type="button" (click)="updateBudgetData()" class="btn btn-primary">Go back</button>
-          <button type="button" class="btn btn-secondary" [routerLink]="['/emergency-fund']" >Proceed anyways</button>
+          <button type="button" class="btn btn-secondary" [routerLink]="['/emergency-fund', {amount: netAmount}]" >Proceed anyways</button>
         </ng-template>
       </div>
       <div [ngStyle]="budgetFormStyle">
           <button type="button" (click)="validateForm()" class="btn btn-primary">Next</button>
           <button type="button" (click)="goBack()" class="btn btn-secondary">Back</button>
       </div>
-      
+
     </div>
   </div>
 </div>

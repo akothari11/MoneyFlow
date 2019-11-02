@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-emergency-fund',
@@ -7,10 +8,12 @@ import { Location } from '@angular/common';
   styleUrls: ['./emergency-fund.component.scss']
 })
 export class EmergencyFundComponent implements OnInit {
+  public netExpenses: number;
 
-  constructor(private locationService: Location) { }
+  constructor(private locationService: Location, private router: ActivatedRoute) { }
 
   ngOnInit() {
+    this.netExpenses = this.router.snapshot.paramMap.get('amount');
   }
 
   /**

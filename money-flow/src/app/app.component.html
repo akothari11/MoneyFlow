@@ -3,11 +3,11 @@
     <h1 style="margin-bottom: 0px !important;"> {{ title }}</h1>
   </div>
   <div class="row" style="background-color: lightblue; text-align: center;">
-    <div class="col">Initial Budget</div>
-    <div class="col">Emergency Funds</div>
-    <div class="col">Employer-Sponsored Matching Funds</div>
-    <div class="col">Debt</div>
-    <div class="col">Savings</div>
+    <div class="col" [class.active]="budgetActive">Initial Budget</div>
+    <div class="col" [class.active]="eFundActive">Emergency Funds</div>
+    <div class="col" [class.active]="empFundActive">Employer-Sponsored Matching Funds</div>
+    <div class="col" [class.active]="debtActive">Debt</div>
+    <div class="col" [class.active]="savingsActive">Savings</div>
   </div>
 
 <!-- <app-info></app-info> -->

@@ -53,7 +53,9 @@ export class BudgetComponent implements OnInit {
     this.invalidIncomeExpense = !this.incomeExpenses ? true : false;
     this.invalidHealthCare = !this.healthCare ? true : false;
     this.invalidDebtPayment = !this.minDebtPayments ? true : false;
+    // tslint:disable-next-line: max-line-length
     if (!this.invalidSalary && !this.invalidHousingExpense && !this.invalidFoodExpense && !this.invalidEssentialBills && !this.invalidIncomeExpense && !this.invalidHealthCare && !this.invalidDebtPayment) {
+      // tslint:disable-next-line: max-line-length
       this.netAmount = this.salary - (this.housingExpense + this.foodExpense + this.essentialBills + this.incomeExpenses + this.healthCare + this.minDebtPayments);
       this.createChart();
     }
@@ -111,13 +113,16 @@ export class BudgetComponent implements OnInit {
         }]
       }
     });
+    // tslint:disable-next-line: object-literal-key-quotes
     this.budgetFormStyle = {'display' : 'none'};
+    // tslint:disable-next-line: object-literal-key-quotes
     this.chartStyle = {'display': 'block'};
   }
 
   public updateBudgetData() {
-    console.log('test');
+    // tslint:disable-next-line: object-literal-key-quotes
     this.chartStyle = {'display': 'none'};
+    // tslint:disable-next-line: object-literal-key-quotes
     this.budgetFormStyle = {'display': 'block'};
   }
 

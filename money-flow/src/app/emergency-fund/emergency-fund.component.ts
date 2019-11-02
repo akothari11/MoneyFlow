@@ -13,7 +13,7 @@ export class EmergencyFundComponent implements OnInit {
   constructor(private locationService: Location, private router: ActivatedRoute) { }
 
   ngOnInit() {
-    this.netExpenses = this.router.snapshot.paramMap.get('amount');
+    this.netExpenses = parseInt(this.router.snapshot.paramMap.get('amount'), 10);
   }
 
   /**

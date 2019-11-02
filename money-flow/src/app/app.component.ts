@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,29 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   public title = 'Money Flow';
+  public budgetActive: boolean;
+  public eFundActive: boolean;
+  public empFundActive: boolean;
+  public debtActive: boolean;
+  public savingsActive: boolean;
+  public routes = ['budget', 'emergency-fund', 'employer-fund', 'debt', 'savings'];
   constructor(private router: Router) {
+    router.events.subscribe((val: any) => {
+      const activatedRoute: string = val.url;
+      if (activatedRoute) {
+        console.log(activatedRoute);
+        this.budgetActive = activatedRoute.indexOf(this.routes[0]) > 0;
+        this.eFundActive = activatedRoute.indexOf(this.routes[1]) > 0;
+        this.empFundActive = activatedRoute.indexOf(this.routes[2]) > 0;
+        this.debtActive = activatedRoute.indexOf(this.routes[3]) > 0;
+        this.savingsActive = activatedRoute.indexOf(this.routes[4]) > 0;
+      }
+      // for(const route of this.routes) {
+      //   if(activatedRoute.indexOf(route) >= 0) {
+
+      //   }
+      // }
+  });
 
   }
   ngOnInit(): void {

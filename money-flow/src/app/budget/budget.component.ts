@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
+import * as Chart from 'chart.js';
 
 @Component({
   selector: 'app-budget',
@@ -8,6 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./budget.component.scss']
 })
 export class BudgetComponent implements OnInit {
+
+  @ViewChild('budgetChart', { static: true}) jobDoughnutChart: ElementRef;
 
   public salary: number;
   public housingExpense: number;
@@ -24,6 +27,11 @@ export class BudgetComponent implements OnInit {
   public invalidIncomeExpense: boolean;
   public invalidHealthCare: boolean;
   public invalidDebtPayment: boolean;
+
+  // tslint:disable-next-line: object-literal-key-quotes
+  public chartStyle = {'display': 'none'};
+  // tslint:disable-next-line: object-literal-key-quotes
+  public budgetFormStyle = {'display': 'block'};
   constructor(private locationService: Location, private router: Router) { }
 
   ngOnInit() {
@@ -38,54 +46,13 @@ export class BudgetComponent implements OnInit {
 
   public validateForm(): void {
     console.log(this.salary);
-    if (!this.salary) {
-      this.invalidSalary = true;
-    }
-    else {
-      this.invalidSalary = false;
-    }
-
-    if (!this.housingExpense) {
-      this.invalidHousingExpense = true;
-    }
-    else {
-      this.invalidHousingExpense = false;
-    }
-
-    if (!this.foodExpense) {
-      this.invalidFoodExpense = true;
-    }
-    else {
-      this.invalidFoodExpense = false;
-    }
-
-    if (!this.essentialBills) {
-      this.invalidEssentialBills = true;
-    }
-    else {
-      this.invalidEssentialBills = false;
-    }
-
-    if (!this.incomeExpenses) {
-      this.invalidIncomeExpense = true;
-    }
-    else {
-      this.invalidIncomeExpense = false;
-    }
-
-    if (!this.healthCare) {
-      this.invalidHealthCare = true;
-    }
-    else {
-      this.invalidHealthCare = false;
-    }
-
-    if (!this.minDebtPayments) {
-      this.invalidDebtPayment = true;
-    }
-    else {
-      this.invalidDebtPayment = false;
-    }
+    this.invalidSalary = !this.salary ? true : false;
+    this.invalidHousingExpense = !this.housingExpense ? true : false;
+    this.invalidFoodExpense = !this.foodExpense ? true : false;
+    this.invalidEssentialBills = !this.essentialBills ? true : false;
+    this.invalidIncomeExpense = !this.incomeExpenses ? true : false;
+    this.invalidHealthCare = !this.healthCare ? true : false;
+    this.invalidDebtPayment = !this.minDebtPayments ? true : false;
 
   }
   public showChart(): void {

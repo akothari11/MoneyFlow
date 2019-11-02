@@ -20,6 +20,7 @@ export class BudgetComponent implements OnInit {
   public invalidSalary: boolean;
   public invalidHousingExpense: boolean;
   public invalidFoodExpense: boolean;
+  public invalidEssentialBills: boolean;
   public invalidIncomeExpense: boolean;
   public invalidHealthCare: boolean;
   public invalidDebtPayment: boolean;
@@ -36,9 +37,56 @@ export class BudgetComponent implements OnInit {
   }
 
   public validateForm(): void {
+    console.log(this.salary);
     if (!this.salary) {
       this.invalidSalary = true;
     }
+    else {
+      this.invalidSalary = false;
+    }
+
+    if (!this.housingExpense) {
+      this.invalidHousingExpense = true;
+    }
+    else {
+      this.invalidHousingExpense = false;
+    }
+
+    if (!this.foodExpense) {
+      this.invalidFoodExpense = true;
+    }
+    else {
+      this.invalidFoodExpense = false;
+    }
+
+    if (!this.essentialBills) {
+      this.invalidEssentialBills = true;
+    }
+    else {
+      this.invalidEssentialBills = false;
+    }
+
+    if (!this.incomeExpenses) {
+      this.invalidIncomeExpense = true;
+    }
+    else {
+      this.invalidIncomeExpense = false;
+    }
+
+    if (!this.healthCare) {
+      this.invalidHealthCare = true;
+    }
+    else {
+      this.invalidHealthCare = false;
+    }
+
+    if (!this.minDebtPayments) {
+      this.invalidDebtPayment = true;
+    }
+    else {
+      this.invalidDebtPayment = false;
+    }
+
   }
   public showChart(): void {
     const data = {

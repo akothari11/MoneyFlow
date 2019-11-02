@@ -12,18 +12,18 @@
               <div class="input-group-prepend">
                 <span class="input-group-text">$</span>
               </div>
-              <input type="number" class="form-control" placeholder="Amount (to the nearest dollar)" [(ngModel)]="salary">
+              <input type="number" class="form-control" placeholder="Amount (to the nearest dollar)" [(ngModel)]="salary" name="salary">
               <div class="input-group-append">
                 <span class="input-group-text">.00</span>
               </div>
-              
+
             </div>
             <div *ngIf="invalidSalary">
-              <small class="invalidText">Please enter a valid salary</small>
+              <small class="invalidText">Please enter a valid number</small>
           </div>
           </div>
         </div>
-       
+
         <br /><br />
         <h6>Essential Expenses</h6>
         <div class="row">
@@ -33,11 +33,15 @@
               <div class="input-group-prepend">
                 <span class="input-group-text">$</span>
               </div>
-              <input type="number" class="form-control" placeholder="Amount (to the nearest dollar)" [(ngModel)]="housingExpense">
+              <input type="number" class="form-control" placeholder="Amount (to the nearest dollar)" [(ngModel)]="housingExpense" name="housingExpense">
               <div class="input-group-append">
                 <span class="input-group-text">.00</span>
               </div>
             </div>
+
+            <div *ngIf="invalidHousingExpense">
+              <small class="invalidText">Please enter a valid number</small>
+          </div>
           </div>
           <div class="col">
             <label for="salaryInput">Food/Groceries</label>
@@ -45,11 +49,15 @@
               <div class="input-group-prepend">
                 <span class="input-group-text">$</span>
               </div>
-              <input type="number" class="form-control" placeholder="Amount (to the nearest dollar)" [(ngModel)]="foodExpense">
+              <input type="number" class="form-control" placeholder="Amount (to the nearest dollar)" [(ngModel)]="foodExpense" name="foodExpense">
               <div class="input-group-append">
                 <span class="input-group-text">.00</span>
               </div>
             </div>
+
+            <div *ngIf="invalidFoodExpense">
+              <small class="invalidText">Please enter a valid number</small>
+          </div>
           </div>
         </div>
         <br />
@@ -60,11 +68,15 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text">$</span>
                 </div>
-                <input type="number" class="form-control" placeholder="Amount (to the nearest dollar)" [(ngModel)]="essentialBills">
+                <input type="number" class="form-control" placeholder="Amount (to the nearest dollar)" [(ngModel)]="essentialBills" name="essentialBills">
                 <div class="input-group-append">
                   <span class="input-group-text">.00</span>
                 </div>
               </div>
+
+              <div *ngIf="invalidEssentialBills">
+                <small class="invalidText">Please enter a valid number</small>
+            </div>
             </div>
             <div class="col">
               <label for="salaryInput">Transportation Costs (Gas, Bus Fare, Car Insurance...)</label>
@@ -72,10 +84,14 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text">$</span>
                 </div>
-                <input type="number" class="form-control" placeholder="Amount (to the nearest dollar)" [(ngModel)]="incomeExpenses">
+                <input type="number" class="form-control" placeholder="Amount (to the nearest dollar)" [(ngModel)]="incomeExpenses" name="incomeExpenses">
                 <div class="input-group-append">
                   <span class="input-group-text">.00</span>
                 </div>
+              </div>
+
+              <div *ngIf="invalidIncomeExpense">
+                <small class="invalidText">Please enter a valid number</small>
               </div>
             </div>
         </div>
@@ -87,10 +103,14 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text">$</span>
                 </div>
-                <input type="number" class="form-control" placeholder="Amount (to the nearest dollar)" [(ngModel)]="healthCare">
+                <input type="number" class="form-control" placeholder="Amount (to the nearest dollar)" [(ngModel)]="healthCare" name="healthCare">
                 <div class="input-group-append">
                   <span class="input-group-text">.00</span>
                 </div>
+              </div>
+
+              <div *ngIf="invalidHealthCare">
+                <small class="invalidText">Please enter a valid number</small>
               </div>
             </div>
             <div class="col">
@@ -99,10 +119,14 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text">$</span>
                 </div>
-                <input type="number" class="form-control" placeholder="Amount (to the nearest dollar)" [(ngModel)]="minDebtPayments">
+                <input type="number" class="form-control" placeholder="Amount (to the nearest dollar)" [(ngModel)]="minDebtPayments" name="minDebtPayments">
                 <div class="input-group-append">
                   <span class="input-group-text">.00</span>
                 </div>
+              </div>
+
+              <div *ngIf="invalidDebtPayment">
+                <small class="invalidText">Please enter a valid number</small>
               </div>
             </div>
         </div>

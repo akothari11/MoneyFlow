@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import * as Chart from 'chart.js';
-import { DataServiceService } from '../data-service.service';
 
 @Component({
   selector: 'app-budget',
@@ -34,7 +33,7 @@ export class BudgetComponent implements OnInit {
   public chartStyle = {'display': 'none'};
   // tslint:disable-next-line: object-literal-key-quotes
   public budgetFormStyle = {'display': 'block'};
-  constructor(private locationService: Location, private router: Router, private dataService: DataServiceService) { }
+  constructor(private locationService: Location, private router: Router) { }
 
   ngOnInit() {
   }

@@ -7,13 +7,13 @@
           <p class="card-text">Please select Yes if your employer offers any sort of plan or account with an employer match. If not, select No.</p>
           <button type="button" (click)="showEmployerTip()" class="btn btn-outline-success btn-lg">Yes</button>
           <button type="button" [routerLink]="['/debt']" class="btn btn-outline-success btn-lg">No</button>
-          <button type="button" (click)="goBack()" class="btn btn-outline-success">Back</button>
+          <button type="button" (click)="goBack()" class="btn btn-outline-success btn-lg">Back</button>
           <br /><br />
       </div>
       <div *ngIf="employerTip">
         <p class="card-text"> Since your employer offers a retirement account with an employer match, you should invets at least the minimum ammount needed in order to receive that match.</p>
-        <button type="button" [routerLink]="['/debt']" class="btn btn-outline-success">Continue</button>
-        <button type="button" (click)="showEmployerQuestion()" class="btn btn-outline-success">Back</button>
+        <button type="button" [routerLink]="['/debt']" class="btn btn-outline-success btn-lg">Continue</button>
+        <button type="button" (click)="showEmployerQuestion()" class="btn btn-outline-success btn-lg">Back</button>
       </div>
     </div>
   </div>

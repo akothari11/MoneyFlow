@@ -8,29 +8,29 @@
               <p class="card-text">Do you have high interest debt, anything with a rate of over 10%? If so, please select yes. If not, select no.</p>
               <button type="button" (click)="showDebtTip()" class="btn btn-outline-success btn-lg">Yes</button>
               <button type="button" (click)="showEFundTip()" class="btn btn-outline-success btn-lg">No</button>
-              <button type="button" (click)="goBack()" class="btn btn-outline-success">Back</button>
+              <button type="button" (click)="goBack()" class="btn btn-outline-success btn-lg">Back</button>
           </div>
           <div *ngIf="debtTip">
             <p class="card-text">Lets start reducing your debt using the Snowball or Avalanche method reccommended by experts. </p>
-            <button type="button" (click)="showEFundTip()" class="btn btn-outline-success">Continue</button>
-            <button type="button" (click)="showDebtQuestion()" class="btn btn-outline-success">Back</button>
+            <button type="button" (click)="showEFundTip()" class="btn btn-outline-success btn-lg">Continue</button>
+            <button type="button" (click)="showDebtQuestion()" class="btn btn-outline-success btn-lg">Back</button>
           </div>
           <div *ngIf="eFundTip">
             <p class="card-text">Since you have paid off your high interest debt, the best plan of action is actually to continue increasing your Emergency Fund. You should continue adding to your Emergency Fund until you have accumulated enough money to cover 3 to 6 months of expenses. </p>
-            <button type="button" (click)="showModerateInterestQuestion()" class="btn btn-outline-success">Continue</button>
-            <button type="button" (click)="showDebtQuestion()" class="btn btn-outline-success">Back</button>
+            <button type="button" (click)="showModerateInterestQuestion()" class="btn btn-outline-success btn-lg">Continue</button>
+            <button type="button" (click)="showDebtQuestion()" class="btn btn-outline-success btn-lg">Back</button>
           </div>
           <div *ngIf="moderateInterestDebtQuestion">
               <p class="card-text">Do you have moderate interest debt that us 4-5% or greater? If so, please select yes. If not, select.</p>
               <button type="button" (click)="showModerateInterestDebtTip()" class="btn btn-outline-success btn-lg">Yes</button>
-              <button type="button" [routerLink]="['/savings']" class="btn btn-outline-success">No</button>
-              <button type="button" (click)="showEFundTip()" class="btn btn-outline-success">Back</button>
+              <button type="button" [routerLink]="['/savings']" class="btn btn-outline-success btn-lg">No</button>
+              <button type="button" (click)="showEFundTip()" class="btn btn-outline-success btn-lg">Back</button>
           </div>
           <div *ngIf="moderateInterestDebtTip">
               <p *ngIf="seenHighDebtTip; else firstTimeMessage" class="card-text">Since you still have some moderate debt, you should continue to use the Snowball or Avalanche methods mentioned before.</p>
               <ng-template #firstTimeMessage>Lets start reducing your debt using the Snowball or Avalanche method reccommended by experts.</ng-template>
-              <button type="button" [routerLink]="['/savings']" class="btn btn-outline-success">Continue</button>
-              <button type="button" (click)="showEFundTip()" class="btn btn-outline-success">Back</button>
+              <button type="button" [routerLink]="['/savings']" class="btn btn-outline-success btn-lg">Continue</button>
+              <button type="button" (click)="showEFundTip()" class="btn btn-outline-success btn-lg">Back</button>
           </div>
         </div>
   </div>

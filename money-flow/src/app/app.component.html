@@ -2,7 +2,7 @@
   <div class="headerDiv">
     <h1> <p>{{ title }}</h1>
   </div>
-  <div class="row" style="text-align: center;">
+  <div class="row" style="text-align: center; margin-right: 0px !important; margin-left: 0px !important;">
     <div class="col g1 tracker" [class.active]="budgetActive">Initial Budget</div>
     <div class="col g2 tracker" [class.active]="eFundActive">Emergency Funds</div>
     <div class="col g3 tracker" [class.active]="empFundActive">Employer-Sponsored Matching Funds</div>
@@ -12,9 +12,11 @@
 
 <!-- <app-info></app-info> -->
 
-<div class="row footer" style="position:absolute;bottom:0px;">
-  <div class="col-6 footerLeft">Copyright</div>
-  <div class="col-6 footerRight">Support/Resources</div>
-</div>
+
 
 <router-outlet></router-outlet>
+
+<!-- <div class="row footer" style="position:relative;bottom:0px;">
+  <div class="col-6 footerLeft">Copyright</div>
+  <div class="col-6 footerRight">Support/Resources</div>
+</div> -->

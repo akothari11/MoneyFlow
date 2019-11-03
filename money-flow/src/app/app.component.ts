@@ -18,18 +18,12 @@ export class AppComponent implements OnInit {
     router.events.subscribe((val: any) => {
       const activatedRoute: string = val.url;
       if (activatedRoute) {
-        console.log(activatedRoute);
         this.budgetActive = activatedRoute.indexOf(this.routes[0]) > 0;
         this.eFundActive = activatedRoute.indexOf(this.routes[1]) > 0;
         this.empFundActive = activatedRoute.indexOf(this.routes[2]) > 0;
         this.debtActive = activatedRoute.indexOf(this.routes[3]) > 0;
         this.savingsActive = activatedRoute.indexOf(this.routes[4]) > 0;
       }
-      // for(const route of this.routes) {
-      //   if(activatedRoute.indexOf(route) >= 0) {
-
-      //   }
-      // }
   });
 
   }

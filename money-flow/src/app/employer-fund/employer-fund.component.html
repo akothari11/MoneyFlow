@@ -11,7 +11,7 @@
           <br /><br />
       </div>
       <div *ngIf="employerTip">
-        <p class="card-text"> Put in min to get match ADD EXTRA TEXT HERE</p>
+        <p class="card-text"> Since your employer offers a retirement account with an employer match, you should invets at least the minimum ammount needed in order to receive that match.</p>
         <button type="button" [routerLink]="['/debt']" class="btn btn-secondary">Continue</button>
         <button type="button" (click)="showEmployerQuestion()" class="btn btn-secondary">Back</button>
       </div>

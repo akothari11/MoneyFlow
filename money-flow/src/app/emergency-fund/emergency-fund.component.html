@@ -3,17 +3,27 @@
   <div class="card cardShadow" style="margin-top: 40px;">
     <div class="card-body">
       <h5 class="card-title">Emergency Fund</h5>
-      <p *ngIf="netExpenses < 1000; else elseBlock" class="card-text">After you start to gain some disposable income, make sure to set all ${{netExpenses}} of it aside into an emergency fund.</p>
+      <p *ngIf="netExpenses < 0"> YOU GOT NO MONEY</p>
+      <p *ngIf="netExpenses < 1000 && netExpenses >=0; else elseBlock" class="card-text">After you start to gain disposable income, make sure to set all ${{netExpenses}} aside into an emergency fund until you have <br /> enough to cover a full months of
+        expenses.</p>
       <ng-template #elseBlock>
-        <p class="card-text">After you start to gain some disposable income, make sure to set $1000 of it each month into an emergency fund.</p>
+        <p class="card-text">After you start to gain some disposable income, make sure to set $1000 of it each month
+          into an emergency fund.</p>
       </ng-template>
-      <p class="card-text">After a couple months, you will have enough to be able to cover any accidents or unexpected costs easily.</p>
-      <br /><br />
-      <h5 class="card-title">Non-Essential Bills</h5>
-      <p class="card-text">Non-Essential Bills include things like paying for cable, phone, internet, streaming services, and so on.</p>
-      <p class="card-text">These are things that are not really necessary but can be accommodated for once enough disposable income is saved.</p>
-      <button type="button" [routerLink]="['/employer-fund']" class="btn btn-primary">Move to employer funds</button>
-      <button type="button" (click) ="goBack()" class="btn btn-secondary">Back</button>
+      <p class="card-text">After a couple months, you will have enough to be able to cover any accidents or unexpected
+        costs easily.</p>
+      
+      <h5 class="card-title" style="margin-top: 50px">Non-Essential Bills</h5>
+      <p class="card-text">Non-Essential Bills include things like paying for cable, phone, internet, streaming
+        services, and so on.</p>
+      <p class="card-text">These are things that are not really necessary but can be accommodated for once enough
+        disposable income is saved.</p>
+      <h5 class="card-title" style="margin-top: 50px;">Moving Forward</h5>
+      <p class="card-text">Now that you have established your budget and know where to cut back or add funds, you're
+        ready to start increasing your savings in order to pay off debt.</p>
+      <button type="button" [routerLink]="['/employer-fund']" class="btn btn-primary">Continue to Employer Funds</button>
+      <button type="button" (click)="goBack()" class="btn btn-secondary">Back</button>
+
     </div>
   </div>
 </div>

@@ -2,14 +2,18 @@
   <div class="card" style="margin-top: 40px;">
     <div class="card-body text-center">
       <h5 class="card-title">Employer Fund</h5>
-      <p class="card-text">Companies often provide other forms of compensation other than salary to an employee. This can come in the form of retirement accounts, equity in a company's IPO, Employee Stock Ownership Plan (ESOP), etc.</p>
-      <p class="card-text">Please select Yes if your employer offers any sort of plan or account with an employer match. If not, select No.</p>
-      <button type="button" class="btn btn-primary btn-lg">Yes</button>
-      <button type="button" class="btn btn-primary btn-lg">No</button>
-      <br /><br />
-      <div class="row">
-        <button type="button" [routerLink]="['/debt']" class="btn btn-primary">Move to debt</button>
-        <button type="button" (click) ="goBack()" class="btn btn-secondary">Back</button>
+      <div *ngIf="!employerTip">
+          <p class="card-text">Companies often provide other forms of compensation other than salary to an employee. This can come in the form of retirement accounts, equity in a company's IPO, Employee Stock Ownership Plan (ESOP), etc.</p>
+          <p class="card-text">Please select Yes if your employer offers any sort of plan or account with an employer match. If not, select No.</p>
+          <button type="button" (click)="showEmployerTip()" class="btn btn-primary btn-lg">Yes</button>
+          <button type="button" [routerLink]="['/debt']" class="btn btn-primary btn-lg">No</button>
+          <button type="button" (click)="goBack()" class="btn btn-secondary">Back</button>
+          <br /><br />
+      </div>
+      <div *ngIf="employerTip">
+        <p class="card-text"> Put in min to get match ADD EXTRA TEXT HERE</p>
+        <button type="button" [routerLink]="['/debt']" class="btn btn-secondary">Continue</button>
+        <button type="button" (click)="showEmployerQuestion()" class="btn btn-secondary">Back</button>
       </div>
     </div>
   </div>

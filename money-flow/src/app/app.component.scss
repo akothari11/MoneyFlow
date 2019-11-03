@@ -1,5 +1,5 @@
 .active {
-  border: 4px solid black;
+  border: 4px solid #388E3C;
 }
 
 .headerDiv {
@@ -11,4 +11,22 @@
   margin-bottom: 0px !important;
   font-family:Lato;
   padding-top: 1.1%;
+}
+
+.footer {
+  text-align: center;
+  width:100%;
+  height:30px;
+  font-weight: bold;
+  padding-top: 0.5%;
+}
+
+.footerLeft {
+  background-color: #388E3C;
+  color:white;
+}
+
+.footerRight {
+  background-color: white;
+  color: #388E3C;
 }

@@ -137,15 +137,15 @@
       <div [ngStyle]="chartStyle">
         <canvas #budgetChart></canvas>
         <p *ngIf="netAmount < 0; " style="text-align: center;">It looks like your net income for this period is negative. We recommend you trying to lower your monthly costs as much as possible.</p>
-        <button type="button" *ngIf="netAmount > 0; else elseBlock" class="btn btn-outline-success" [routerLink]="['/emergency-fund', {amount: netAmount}]" >Next</button>
+        <button type="button" *ngIf="netAmount > 0; else elseBlock" class="btn btn-outline-success btn-lg margin4" [routerLink]="['/emergency-fund', {amount: netAmount}]" >Next</button>
         <ng-template #elseBlock>
-          <button type="button" (click)="updateBudgetData()" class="btn btn-outline-success btn-lg">Go back</button>
-          <button type="button" class="btn btn-outline-success btn-lg" [routerLink]="['/emergency-fund', {amount: netAmount}]" >Proceed anyways</button>
+          <button type="button" (click)="updateBudgetData()" class="btn btn-outline-success btn-lg margin4">Go back</button>
+          <button type="button" class="btn btn-outline-success btn-lg margin4" [routerLink]="['/emergency-fund', {amount: netAmount}]" >Proceed anyways</button>
         </ng-template>
       </div>
       <div [ngStyle]="budgetFormStyle">
-          <button type="button" (click)="validateForm()" class="btn btn-outline-success btn-lg">Next</button>
-          <button type="button" (click)="goBack()" class="btn btn-outline-success btn-lg">Back</button>
+          <button type="button" (click)="validateForm()" class="btn btn-outline-success btn-lg margin4">Next</button>
+          <button type="button" (click)="goBack()" class="btn btn-outline-success btn-lg margin4">Back</button>
       </div>
 
     </div>

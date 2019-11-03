@@ -77,46 +77,65 @@ export class BudgetComponent implements OnInit {
   }
 
   public createChart(): void {
-    const doughnutChart = new Chart(this.budgetDoughnutChart.nativeElement.getContext('2d'), {
-      type: 'doughnut',
+
+    const chart = new Chart(this.budgetDoughnutChart.nativeElement.getContext('2d'), {
+      type: 'bar',
       data: {
-        labels: [
-          'Salary',
-          'Housing Expenses',
-          'Food Expenses',
-          'Essential Bills',
-          'Income Expenses',
-          'Health Care',
-          'Debt Payments'
-        ],
-        datasets: [{
-          backgroundColor: [
-            '#98C1D9',
-            '#7B6D8D',
-            '#95a5a6',
-            '#F0B67F',
-            '#5D8970',
-            '#EF6F6C',
-            '#293241'
-          ],
-          data: [
-            this.salary,
-            this.housingExpense,
-            this.foodExpense,
-            this.essentialBills,
-            this.incomeExpenses,
-            this.healthCare,
-            this.minDebtPayments
-          ]
-        }]
+         labels: ['Monthly Income', 'Essential Expenses'],
+         datasets: [{
+            label: 'Salary',
+            data: [this.salary, 0],
+            backgroundColor: '#98C1D9'
+         }, {
+            label: 'Housing Expenses',
+            data: [0, this.housingExpense],
+            backgroundColor: '#7B6D8D'
+         }, {
+            label: 'Food Expenses',
+            data: [0, this.foodExpense],
+            backgroundColor: '#95a5a6',
+         }, {
+            label: 'Essential Bills',
+            data: [0, this.essentialBills],
+            backgroundColor: '#F0B67F'
+         }, {
+            label: 'Income Expenses',
+            data: [0, this.incomeExpenses],
+            backgroundColor: '#5D8970'
+         }, {
+            label: 'Health Care Expenses',
+            data: [0, this.healthCare],
+            backgroundColor: '#EF6F6C'
+         }, {
+            label: 'Debt Payments',
+            data: [0, this.minDebtPayments],
+            backgroundColor: '#293241'
+         }]
       },
       options: {
-        legend: {
-            display: true,
-            position:'right'
-        }
+         legend: {
+            position: 'right',
+            labels: {
+                fontSize: 18
+              }
+         },
+         scales: {
+            xAxes: [{
+               stacked: true,
+               ticks: {
+                 fontSize: 18
+               }
+            }],
+            yAxes: [{
+               stacked: true,
+               ticks: {
+                fontSize: 18
+              }
+            }]
+         }
       }
-    });
+   });
+
     // tslint:disable-next-line: object-literal-key-quotes
     this.budgetFormStyle = {'display' : 'none'};
     // tslint:disable-next-line: object-literal-key-quotes

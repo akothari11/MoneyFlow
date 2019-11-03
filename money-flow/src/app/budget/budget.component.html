@@ -2,10 +2,10 @@
   <div class="card cardShadow" style="margin-top: 40px;">
     <div class="card-body">
       <div [ngStyle]="budgetFormStyle">
-          <h5 class="card-title">Budget</h5>
+          <h2 class="card-title">Budget</h2>
           <p class="card-text">Let's go over a couple questions to assess some basic income and expenses you may have: </p>
           <form>
-            <h6>Monthly Income</h6>
+            <h3>Monthly Income</h3>
             <div class="row">
               <div class="col-6">
                 <label for="salaryInput">Monthly Salary</label>
@@ -26,10 +26,10 @@
             </div>
 
             <br /><br />
-            <h6>Essential Expenses</h6>
+            <h3>Essential Expenses</h3>
             <div class="row">
               <div class="col">
-                <label for="salaryInput">Housing Expenses (Monthly Rent/Mortgage Payments)</label>
+                <label class="inputFontSize" for="salaryInput">Housing Expenses (Monthly Rent/Mortgage Payments)</label>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
@@ -45,7 +45,7 @@
               </div>
               </div>
               <div class="col">
-                <label for="salaryInput">Food/Groceries</label>
+                <label class="inputFontSize" for="salaryInput">Food/Groceries</label>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
@@ -64,7 +64,7 @@
             <br />
             <div class="row">
                 <div class="col">
-                  <label for="salaryInput">Essential Bills (Power, Water, Heat, Toiletries...)</label>
+                  <label class="inputFontSize" for="salaryInput">Essential Bills (Power, Water, Heat, Toiletries...)</label>
                   <div class="input-group">
                     <div class="input-group-prepend">
                       <span class="input-group-text">$</span>
@@ -80,7 +80,7 @@
                 </div>
                 </div>
                 <div class="col">
-                  <label for="salaryInput">Transportation Costs (Gas, Bus Fare, Car Insurance...)</label>
+                  <label class="inputFontSize" for="salaryInput">Transportation Costs (Gas, Bus Fare, Car Insurance...)</label>
                   <div class="input-group">
                     <div class="input-group-prepend">
                       <span class="input-group-text">$</span>
@@ -99,7 +99,7 @@
             <br />
             <div class="row">
                 <div class="col">
-                  <label for="salaryInput">Health Care</label>
+                  <label class="inputFontSize" for="salaryInput">Health Care</label>
                   <div class="input-group">
                     <div class="input-group-prepend">
                       <span class="input-group-text">$</span>
@@ -115,7 +115,7 @@
                   </div>
                 </div>
                 <div class="col">
-                  <label for="salaryInput">Minimum Debt Payments</label>
+                  <label class="inputFontSize" for="salaryInput">Minimum Debt Payments</label>
                   <div class="input-group">
                     <div class="input-group-prepend">
                       <span class="input-group-text">$</span>
@@ -135,14 +135,15 @@
           <br /><br />
       </div>
       <div [ngStyle]="chartStyle" class="text-center">
-        <p style="margin: 20px; font-weight: bold; font-size: 18px;">Here's a quick visual of your monthly income vs spending:</p>
+        <p style="margin: 20px; font-weight: bold;">Here's a quick visual of your monthly income vs spending:</p>
         <canvas #budgetChart></canvas>
-        <p *ngIf="netAmount < 0; else netAmountPositive" style="text-align: center; color:red; margin-top: 40px; font-size: 18px;" >*It looks like your net income for this period is negative. We recommend you trying to lower your monthly costs as much as possible before continuing.</p>
-        <div style="margin-top: 50px">
+        <p *ngIf="netAmount >= 0" style="margin-top: 20px;">You're net disposable income every month is ${{netAmount}}</p>
+        <p *ngIf="netAmount < 0; else netAmountPositive" style="text-align: center; color:red; margin-top: 40px;" >*It looks like your net income for this period is negative. We recommend you trying to lower your monthly costs as much as possible before continuing.</p>
+        <div style="margin-top: 30px">
           <button type="button" *ngIf="netAmount > 0; else elseBlock"  class="btn btn-outline-success btn-lg margin4" [routerLink]="['/emergency-fund', {amount: netAmount}]" >Next</button>
         </div>
         <ng-template #elseBlock>
-          <div style="margin-top: 50px">
+          <div style="margin-top: 30px">
               <button type="button" (click)="updateBudgetData()" class="btn btn-outline-success btn-lg margin4">Go back</button>
               <button type="button" class="btn btn-outline-success btn-lg margin4" [routerLink]="['/emergency-fund', {amount: netAmount}]" >Proceed anyways</button>
           </div>

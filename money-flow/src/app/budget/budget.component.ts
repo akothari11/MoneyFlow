@@ -111,6 +111,12 @@ export class BudgetComponent implements OnInit {
             this.minDebtPayments
           ]
         }]
+      },
+      options: {
+        legend: {
+            display: true,
+            position:'right'
+        }
       }
     });
     // tslint:disable-next-line: object-literal-key-quotes

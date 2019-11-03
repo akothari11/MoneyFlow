@@ -1,19 +1,42 @@
 <div class="container">
   <div class="card cardShadow" style="margin-top: 40px;">
-      <div class="card-body text-center">
-          <h5 *ngIf="debtHeader; else elseBlock" class="card-title">Debt Reduction </h5>
-          <h5 *ngIf="eFundTip; else elseBlock" class="card-title">Let's start your long-term emergency fund! </h5>
-          <h5 *ngIf="moderateDebtHeader" class="card-title">Continuing Debt Reduction </h5>
-          <div *ngIf="!debtTip && !eFundTip && !moderateInterestDebtQuestion && !moderateInterestDebtTip">
-              <p class="card-text">Do you have high interest debt, anything with a rate of over 10%? If so, please select yes. If not, select no.</p>
-              <button type="button" (click)="showDebtTip()" class="btn btn-outline-success btn-lg margin4">Yes</button>
-              <button type="button" (click)="showEFundTip()" class="btn btn-outline-success btn-lg margin4">No</button>
-              <button type="button" (click)="goBack()" class="btn btn-outline-success btn-lg margin4">Back</button>
-          </div>
+      <div class="card-body">
+        <div class="text-center">
+            <h5 *ngIf="debtHeader; else elseBlock" class="card-title">Debt Reduction </h5>
+            <h5 *ngIf="eFundTip; else elseBlock" class="card-title">Let's start your long-term emergency fund! </h5>
+            <h5 *ngIf="moderateDebtHeader" class="card-title">Continuing Debt Reduction </h5>
+            <div *ngIf="!debtTip && !eFundTip && !moderateInterestDebtQuestion && !moderateInterestDebtTip">
+                <p class="card-text">Do you have high interest debt, anything with a rate of over 10%? If so, please select yes. If not, select no.</p>
+                <button type="button" (click)="showDebtTip()" class="btn btn-outline-success btn-lg margin4">Yes</button>
+                <button type="button" (click)="showEFundTip()" class="btn btn-outline-success btn-lg margin4">No</button>
+                <button type="button" (click)="goBack()" class="btn btn-outline-success btn-lg margin4">Back</button>
+            </div>
+        </div>
+          
           <div *ngIf="debtTip">
             <p class="card-text">Lets start reducing your debt using the Snowball or Avalanche method reccommended by experts. </p>
-            <button type="button" (click)="showEFundTip()" class="btn btn-outline-success btn-lg margin4">Continue</button>
-            <button type="button" (click)="showDebtQuestion()" class="btn btn-outline-success btn-lg margin4">Back</button>
+            <p class="card-text">Here's some further resources on using the Snowball or Avalanche Method:</p>
+            <ul style="list-style-type:disc;">
+                <li><a href="https://studentloanhero.com/featured/debt-snowball-method-helps-repay-loans/">Snowball Method</a>
+                  <ul>
+                    <li>The Snowball Method of eliminating debt involves making the smallest possible payments you can make, slowly working your way up to higher amounts.</li>
+                  </ul>
+                </li>
+                <br>
+                <li><a href="https://studentloanhero.com/featured/debt-avalanche-pay-off-student-debt/">Avalanche Method</a>
+                  <ul>
+                      <li>The debt avalanche method involves making minimum payments on all debt, then using any remaining money to pay off the debt with the highest interest rate.</li>
+                    </ul>
+                </li>
+                <br>
+                
+                <br>
+              </ul>
+              <div class="text-center">
+                  <button type="button" (click)="showEFundTip()" class="btn btn-outline-success btn-lg margin4">Continue</button>
+                  <button type="button" (click)="showDebtQuestion()" class="btn btn-outline-success btn-lg margin4">Back</button>
+              </div>
+            
           </div>
           <div *ngIf="eFundTip">
             <p class="card-text">Since you have paid off your high interest debt, the best plan of action is actually to continue increasing your Emergency Fund. You should continue adding to your Emergency Fund until you have accumulated enough money to cover 3 to 6 months of expenses. </p>

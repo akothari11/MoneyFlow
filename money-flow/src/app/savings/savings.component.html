@@ -2,11 +2,11 @@
   <div class="card cardShadow" style="margin-top: 40px;">
     <div class="card-body">
       <h5 class="card-title">Savings</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+      <p class="card-text">Now that you have been able to establish a budget that has maxed your emergency fund and paid off most of your debt, youre ready to start saving.
         content.</p>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+        <p class="card-text">To begin, you'll start to plan for the near future but as you progress through you will end up also saving for the distant future.
             content.</p>
-      <button type="button" (click)="savingsQuestionCard = true" class="btn btn-outline-success btn-lg margin4">Next</button>
+      <button type="button" (click)="showSavingsQuestion()" class="btn btn-outline-success btn-lg margin4">Next</button>
     </div>
   </div>
 
@@ -24,7 +24,7 @@
   <div *ngIf="savingsAdvice" class="card cardShadow" style="margin-top: 40px;">
     <div class="card-body">
       <h5 class="card-title">Savings Advice</h5>
-      <p class="card-text">Start saving for that expense</p>
+      <p class="card-text">You should start saving for that expense specifically.</p>
       <button type="button" (click)="savingsRetirementQuestion = true;" class="btn btn-outline-success btn-lg margin4">Next</button>
     </div>
   </div>
@@ -41,7 +41,7 @@
   <div *ngIf="savings401kQuestion" class="card cardShadow" style="margin-top: 40px;">
     <div class="card-body">
       <h5 class="card-title">Savings - 401k</h5>
-      <p class="card-text">Does your employer offer a 401k?</p>
+      <p class="card-text">Does your employer offer a 401k or similar retirement plan into which you can save more money?</p>
       <button type="button" (click)="answerEmployer401kTrue()" class="btn btn-outline-success btn-lg margin4">Yes</button>
       <button type="button" (click)="answerEmployer401kFalse()" class="btn btn-outline-success btn-lg margin4">No</button>
     </div>
@@ -58,7 +58,7 @@
   <div *ngIf="savingsIndividual401k" class="card cardShadow" style="margin-top: 40px;">
       <div class="card-body">
         <h5 class="card-title">Savings - 401k</h5>
-        <p class="card-text">If self employed, contribute to own 401k</p>
+        <p class="card-text">If self employed, contribute to your own 401k or simple IRA to reach a 15% pre-tax income saved but in not, contribute to a taxabke account to reach this goal. </p>
         <button type="button" (click)="healthCareQuestion = true" class="btn btn-outline-success btn-lg margin4">Next</button>
       </div>
   </div>
@@ -66,16 +66,17 @@
   <div *ngIf= "healthCareQuestion" class="card cardShadow" style="margin-top: 40px;">
       <div class="card-body">
         <h5 class="card-title">Savings - Health Care</h5>
-        <p class="card-text">Do you have HDHP?</p>
+        <p class="card-text">Do you have a high deductible health plan?</p>
         <button type="button" (click)="answerHealthQuestionTrue()" class="btn btn-outline-success btn-lg margin4">Yes</button>
-        <button type="button" (click)="answerHealthQuestionFalse()" class="btn btn-outline-success btn-lg margin4">No</button>
+        <button type="button" (click)="answerHealthQuestionFalse()"s class="btn btn-outline-success btn-lg margin4">No</button>
       </div>
   </div>
 
   <div *ngIf="savingsHealthCareAdvice" class="card cardShadow" style="margin-top: 40px;">
       <div class="card-body">
         <h5 class="card-title">Savings - Health Care Advice</h5>
-        <p class="card-text">Max HSA</p>
+        <p class="card-text">Max your yearly HSA contributions</p>
+        <p class="card-text">The Health Savings Account (HSA) can be used to pay for current or future health care expenses. This account is tax-advantaged allowing you make tax-free contributions to an insured savings account</p>
         <button type="button" (click)="savingsChildCareQuestion = true" class="btn btn-outline-success btn-lg margin4">Next</button>
       </div>
   </div>
@@ -92,15 +93,15 @@
   <div *ngIf="savingsChildCareAdvice" class="card cardShadow" style="margin-top: 40px;">
       <div class="card-body">
         <h5 class="card-title">Savings - Child Care</h5>
-        <p class="card-text">Evaluate savings and investment such as a 529 plan</p>
+        <p class="card-text">Evaluate the available savings and investment options such as a 529 plan, and add accordingly.</p>
         <button type="button" (click)="finalCard = true" class="btn btn-outline-success btn-lg margin4">Next</button>
       </div>
   </div>
 
   <div *ngIf="finalCard" class="card cardShadow" style="margin-top: 40px;">
       <div class="card-body">
-        <h5 class="card-title">Final</h5>
-        <p class="card-text">Congrats you finished</p>
+        <h5 class="card-title">Congrats! </h5>
+        <p class="card-text">You've established a budget, maximized your emergency fund and employer-sponsored funds, eliminated debt, and know how to save for your future! What you wish to do next is all up to you. Best of luck!</p>
         <button type="button" [routerLink]="['/info']" class="btn btn-outline-success btn-lg margin4">Start Over</button>
       </div>
   </div>

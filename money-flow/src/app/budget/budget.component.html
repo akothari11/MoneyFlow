@@ -136,7 +136,7 @@
       </div>
       <div [ngStyle]="chartStyle" class="text-center">
         <canvas #budgetChart></canvas>
-        <p *ngIf="netAmount < 0; " style="text-align: center;">It looks like your net income for this period is negative. We recommend you trying to lower your monthly costs as much as possible.</p>
+        <p *ngIf="netAmount < 0; " style="text-align: center; color:red; margin-top: 40px; font-size: 18px;" >*It looks like your net income for this period is negative. We recommend you trying to lower your monthly costs as much as possible before continuing.</p>
         <button type="button" *ngIf="netAmount > 0; else elseBlock" class="btn btn-outline-success btn-lg margin4" [routerLink]="['/emergency-fund', {amount: netAmount}]" >Next</button>
         <ng-template #elseBlock>
           <button type="button" (click)="updateBudgetData()" class="btn btn-outline-success btn-lg margin4">Go back</button>

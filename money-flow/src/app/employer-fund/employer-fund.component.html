@@ -1,7 +1,7 @@
 <div class="container">
   <div class="card cardShadow" style="margin-top: 40px;">
     <div class="card-body text-center">
-      <h5 class="card-title">Employer Fund</h5>
+      <h5 class="card-title">Employer-Sponsored Funds</h5>
       <div *ngIf="!employerTip">
           <p class="card-text">Companies often provide other forms of compensation other than salary to an employee. This can come in the form of retirement accounts, equity in a company's IPO, Employee Stock Ownership Plan (ESOP), etc.</p>
           <p class="card-text">Please select Yes if your employer offers any sort of plan or account with an employer match. If not, select No.</p>
@@ -10,6 +10,7 @@
           <button type="button" (click)="goBack()" class="btn btn-outline-success btn-lg margin4">Back</button>
           <br /><br />
       </div>
+
       <div *ngIf="employerTip">
         <p class="card-text"> Since your employer offers a retirement account with an employer match, you should invets at least the minimum ammount needed in order to receive that match.</p>
         <button type="button" [routerLink]="['/debt']" class="btn btn-outline-success btn-lg margin4">Continue</button>

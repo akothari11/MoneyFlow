@@ -46,20 +46,19 @@ export class BudgetComponent implements OnInit {
   }
 
   public validateForm(): void {
-    this.invalidSalary = !this.salary ? true : false;
-    this.invalidHousingExpense = !this.housingExpense ? true : false;
-    this.invalidFoodExpense = !this.foodExpense ? true : false;
-    this.invalidEssentialBills = !this.essentialBills ? true : false;
-    this.invalidIncomeExpense = !this.incomeExpenses ? true : false;
-    this.invalidHealthCare = !this.healthCare ? true : false;
-    this.invalidDebtPayment = !this.minDebtPayments ? true : false;
+    this.invalidSalary = isNaN(this.salary) || this.salary < 0;
+    this.invalidHousingExpense = isNaN(this.housingExpense) || this.housingExpense < 0;
+    this.invalidFoodExpense = isNaN(this.foodExpense) || this.foodExpense < 0;
+    this.invalidEssentialBills = isNaN(this.essentialBills) || this.essentialBills < 0;
+    this.invalidIncomeExpense = isNaN(this.incomeExpenses) || this.incomeExpenses < 0;
+    this.invalidHealthCare = isNaN(this.healthCare) || this.healthCare < 0;
+    this.invalidDebtPayment = isNaN(this.minDebtPayments) || this.minDebtPayments < 0;
     // tslint:disable-next-line: max-line-length
     if (!this.invalidSalary && !this.invalidHousingExpense && !this.invalidFoodExpense && !this.invalidEssentialBills && !this.invalidIncomeExpense && !this.invalidHealthCare && !this.invalidDebtPayment) {
       // tslint:disable-next-line: max-line-length
       this.netAmount = this.salary - (this.housingExpense + this.foodExpense + this.essentialBills + this.incomeExpenses + this.healthCare + this.minDebtPayments);
       this.createChart();
     }
-
   }
   public showChart(): void {
     const data = {
@@ -78,7 +77,6 @@ export class BudgetComponent implements OnInit {
   }
 
   public createChart(): void {
-    console.log('test');
     const doughnutChart = new Chart(this.budgetDoughnutChart.nativeElement.getContext('2d'), {
       type: 'doughnut',
       data: {

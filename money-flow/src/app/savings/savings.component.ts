@@ -28,6 +28,7 @@ export class SavingsComponent implements OnInit {
     this.savingsQuestionCard = true;
   }
   public answerSavingsQuestionTrue() {
+    this.savingsQuestionCard = false;
     this.savingsAdvice = true;
     this.savingsRetirementQuestion = false;
     this.savings401kQuestion = false;
@@ -75,7 +76,7 @@ export class SavingsComponent implements OnInit {
   }
 
   public answerEmployer401kTrue() {
-
+    this.savings401kQuestion = false;
     this.healthCareQuestion = false;
     this.savings401kAdvice = true;
     this.savingsIndividual401k = false;
@@ -96,7 +97,7 @@ export class SavingsComponent implements OnInit {
   }
 
   public answerHealthQuestionTrue() {
-
+    this.healthCareQuestion = false;
     this.savingsHealthCareAdvice = true;
     this.savingsChildCareQuestion = false;
     this.savingsChildCareAdvice = false;
@@ -111,7 +112,7 @@ export class SavingsComponent implements OnInit {
   }
 
   public answerChildCareQuestionTrue() {
-
+    this.savingsChildCareQuestion = false;
     this.savingsChildCareAdvice = true;
     this.finalCard = false;
   }

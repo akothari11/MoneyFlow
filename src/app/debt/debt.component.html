@@ -2,8 +2,8 @@
   <div class="card cardShadow" style="margin-top: 40px;">
       <div class="card-body">
         <div class="text-center">
-            <h2 *ngIf="debtHeader; else elseBlock" class="card-title">Debt Reduction </h2>
-            <h2 *ngIf="eFundTip; else elseBlock" class="card-title">Let's start your long-term emergency fund! </h2>
+            <h2 *ngIf="debtHeader;" class="card-title">Debt Reduction </h2>
+            <h2 *ngIf="eFundTip;" class="card-title">Let's start your long-term emergency fund! </h2>
             <h2 *ngIf="moderateDebtHeader" class="card-title">Continuing Debt Reduction </h2>
             <div *ngIf="!debtTip && !eFundTip && !moderateInterestDebtQuestion && !moderateInterestDebtTip">
                 <p class="card-text">Do you have high interest debt, anything with a rate of over 10%? If so, please select yes. If not, select no.</p>

@@ -27,7 +27,7 @@ export class BudgetComponent implements OnInit {
   public invalidIncomeExpense: boolean;
   public invalidHealthCare: boolean;
   public invalidDebtPayment: boolean;
-  private netAmount: number;
+  public netAmount: number;
 
   // tslint:disable-next-line: object-literal-key-quotes
   public chartStyle = {'display': 'none'};

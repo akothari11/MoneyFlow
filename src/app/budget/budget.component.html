@@ -138,7 +138,7 @@
         <p style="margin: 20px; font-weight: bold;">Here's a quick visual of your monthly income vs spending:</p>
         <canvas #budgetChart></canvas>
         <span style="color:#388e3c"><p *ngIf="netAmount >= 0" style="margin-top: 20px;">Your net disposable income every month is ${{netAmount}}</p></span>
-        <p *ngIf="netAmount < 0; else netAmountPositive" style="text-align: center; color:red; margin-top: 40px;" >*It looks like your net income for this period is negative. We recommend you trying to lower your monthly costs as much as possible before continuing.</p>
+        <p *ngIf="netAmount < 0;" style="text-align: center; color:red; margin-top: 40px;" >*It looks like your net income for this period is negative. We recommend you trying to lower your monthly costs as much as possible before continuing.</p>
         <div style="margin-top: 30px">
           <button type="button" *ngIf="netAmount > 0; else elseBlock"  class="btn btn-outline-success btn-lg margin4" [routerLink]="['/emergency-fund', {amount: netAmount}]" >Next</button>
         </div>
